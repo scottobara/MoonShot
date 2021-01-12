@@ -9,8 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            
+            GeometryReader { geo in
+                VStack {Spacer()
+                    Image("Example")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: geo.size.width)
+                    Spacer()
+                }
+            }
+            
+        }
     }
 }
 
