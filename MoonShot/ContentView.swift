@@ -7,20 +7,31 @@
 
 import SwiftUI
 
+struct CustomText: View {
+    static var printCount: Int = 0
+    var text: String
+
+    var body: some View {
+        Text(text)
+    }
+    
+    init(_ text: String) {
+        print("Creating a new CustomText: \(CustomText.printCount)")
+        CustomText.printCount += 1
+        self.text = text
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            
-            GeometryReader { geo in
-                VStack {Spacer()
-                    Image("Example")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: geo.size.width)
-                    Spacer()
+        ScrollView(.vertical) {
+            LazyVStack(spacing: 10) {
+                ForEach(0..<100) {
+                    CustomText("Item \($0)")
+                        .font(.title)
                 }
             }
-            
+            .frame(maxWidth: .infinity)
         }
     }
 }
