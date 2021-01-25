@@ -28,13 +28,15 @@ struct MissionView: View {
 
                     Text(self.mission.description)
                         .padding()
-                    
+                    Divider()
+                        .padding([.leading, .bottom, .trailing])
                     ForEach(self.astronauts, id: \.role) { crewMember in
                         HStack {
                             Image(crewMember.astronaut.id)
                                 .resizable()
-                                .frame(width: 83, height: 60)
-                                .clipShape(Capsule())
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 60, height: 60)
+                                .clipShape(Circle())
                                 .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
 
                             VStack(alignment: .leading) {
@@ -43,6 +45,7 @@ struct MissionView: View {
                                 Text(crewMember.role)
                                     .foregroundColor(.secondary)
                             }
+                            .padding(.leading, 10.0)
 
                             Spacer()
                         }
