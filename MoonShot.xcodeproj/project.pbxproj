@@ -17,6 +17,7 @@
 		36642C6D25AE37C000B252E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36642C6C25AE37C000B252E1 /* Assets.xcassets */; };
 		36642C7025AE37C000B252E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36642C6F25AE37C000B252E1 /* Preview Assets.xcassets */; };
 		366613CB25BD647E00CC7707 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366613CA25BD647E00CC7707 /* Mission.swift */; };
+		3671271125BE96EC0045997A /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3671271025BE96EC0045997A /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		36642C6F25AE37C000B252E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36642C7125AE37C000B252E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366613CA25BD647E00CC7707 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		3671271025BE96EC0045997A /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				360CB39E25BCE38B00A06E94 /* Astronaut.swift */,
 				360CB3A125BCE4E900A06E94 /* Bundle-Decodable.swift */,
 				365915D825BD7B7900AC33D0 /* MissionView.swift */,
+				3671271025BE96EC0045997A /* AstronautView.swift */,
 				360CB39A25BCE30E00A06E94 /* missions.json */,
 				366613CA25BD647E00CC7707 /* Mission.swift */,
 				36642C6E25AE37C000B252E1 /* Preview Content */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3671271125BE96EC0045997A /* AstronautView.swift in Sources */,
 				360CB39F25BCE38B00A06E94 /* Astronaut.swift in Sources */,
 				36642C6B25AE37BF00B252E1 /* ContentView.swift in Sources */,
 				36642C6925AE37BF00B252E1 /* MoonShotApp.swift in Sources */,
