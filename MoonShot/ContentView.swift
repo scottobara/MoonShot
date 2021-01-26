@@ -35,6 +35,12 @@ struct ContentView: View {
                         showDate.toggle()
                     }
                 )
+                .navigationBarItems(trailing:
+                                        Button(action: { showDate.toggle()}) {
+                                                        Image(systemName: "arrow.triangle.2.circlepath")
+                                                            .padding([.leading, .top, .bottom])
+                                                    }
+                )
             }
             .navigationBarTitle("Moonshot")
         }
