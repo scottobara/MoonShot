@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MissionView: View {
+    let missions: [Mission] = Bundle.main.decode("missions.json")
+    
     struct CrewMember {
         let role: String
         let astronaut: Astronaut
@@ -26,7 +28,10 @@ struct MissionView: View {
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
                     
-                    
+                    Text(self.mission.formattedLaunchDate)
+                        .font(.subheadline)
+                        .textCase(.uppercase)
+                        .foregroundColor(.secondary)
                     
                     Text(self.mission.description)
                         .padding()
@@ -35,7 +40,7 @@ struct MissionView: View {
                         .padding([.leading, .bottom, .trailing])
                     ForEach(self.astronauts, id: \.role) { crewMember in
                         
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, missions: missions)) {
                             HStack {
                                 Image(crewMember.astronaut.id)
                                     .resizable()
@@ -69,13 +74,17 @@ struct MissionView: View {
         .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
     }
     
+    // get the current mission and [Astronaut] array
     init(mission: Mission, astronauts: [Astronaut]) {
+        //set mission in context to mission variable
         self.mission = mission
-
+        //create a new [CrewMember]() array to load matched crew member info into
         var matches = [CrewMember]()
-
+        //loop over the crew array (contains name and role) within the current mission
         for member in mission.crew {
+            //set match to the first instance in Astronauts array where an Astronaut[$0].id == mission.crew.name
             if let match = astronauts.first(where: { $0.id == member.name }) {
+                //if found add role and astronaut to the [CrewMember]() Array
                 matches.append(CrewMember(role: member.role, astronaut: match))
             } else {
                 fatalError("Missing \(member)")
