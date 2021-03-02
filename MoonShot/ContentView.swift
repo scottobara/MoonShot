@@ -30,11 +30,11 @@ struct ContentView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-                .navigationBarItems(trailing:
-                                        Button(showDate ? "Crew" : "Date") {
-                        showDate.toggle()
-                    }
-                )
+//                .navigationBarItems(trailing:
+//                                        Button(showDate ? "Crew" : "Date") {
+//                        showDate.toggle()
+//                    }
+//                )
                 .navigationBarItems(trailing:
                                         Button(action: { showDate.toggle()}) {
                                                         Image(systemName: "arrow.triangle.2.circlepath")
