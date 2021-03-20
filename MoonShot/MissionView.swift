@@ -22,11 +22,29 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
-                    Image(self.mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
+                    GeometryReader { geo in
+                        Image(self.mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            //.frame(width: (geo.frame(in: .global).midY > 0) ? (geo.frame(in: .global).midY / 800) + 0.8 : 0.8)
+                            
+                            .scaleEffect((geo.frame(in: .global).midY > 0) ? (geo.frame(in: .global).midY / 800) + 0.8 : 0.8)
+                            .padding()
+                            .animation(.linear)
+                            //.background(Color.green)
+                            
+                    }
+                    .frame(width: geometry.size.width * 0.8, height: geometry.size.width * 0.8)
+                    
+                    
+                    
+                    
+                    
+//                    GeometryReader { geop in
+//                        Text("\(geop.frame(in: .global).midY)")
+//                    }
+//                    .frame(width: 100, height: 10)
+//                    .offset(y: -150)
                     
                     Text(self.mission.formattedLaunchDate)
                         .font(.subheadline)
